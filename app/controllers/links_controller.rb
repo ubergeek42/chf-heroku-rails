@@ -1,4 +1,13 @@
 class LinksController < ApplicationController
+  # GET /links/go/1
+  def go
+    @link = Link.find(params[:id])
+    @link[:clicks] = @link[:clicks] + 1
+    @link.save
+
+    redirect_to @link.url
+  end
+
   # GET /links
   # GET /links.json
   def index

@@ -5,7 +5,7 @@ Links::Application.routes.draw do
   get "main/index"
 
   root :to => 'main#index'
-
+  match 'links/go/:id' => 'links#go'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
