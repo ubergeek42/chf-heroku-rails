@@ -1,4 +1,7 @@
 Links::Application.routes.draw do
+  resources :links
+
+
   get "main/index"
 
   # The priority is based upon order of creation:
