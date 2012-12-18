@@ -1,19 +1,23 @@
-<h1>Link Database</h1>
+<h1>Simple Link Database</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Clicks</th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Clicks</th>
+    </tr>
+  </thead>
 
+  <tbody>
 <% @links.each do |link| %>
-  <tr>
-    <td><%= link.name %></td>
-    <td><%= link_to link.url, :controller=>'links', :action=>'go', :id=>link %></td>
-    <td><%= link.clicks %></td>
-  </tr>
+    <tr>
+      <td><%= link.name %></td>
+      <td><%= link_to link.url, :controller=>'links', :action=>'go', :id=>link %></td>
+      <td><%= link.clicks %></td>
+    </tr>
 <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'Admin', :controller => 'links' %>

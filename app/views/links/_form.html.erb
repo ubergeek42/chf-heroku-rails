@@ -1,8 +1,7 @@
-<%= form_for(@link) do |f| %>
+<%= form_for(@link, :html=>{:class=>"new_link form-horizontal"}) do |f| %>
   <% if @link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
+    <div class="alert">
+      <b><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</b>
       <ul>
       <% @link.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,15 +10,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+  <div class="control-group">
+    <%= f.label :url, :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :url %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class=>"btn"%>
+    </div>
   </div>
 <% end %>
